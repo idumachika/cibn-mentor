@@ -1,0 +1,68 @@
+h1, h2, h3, h4, h5, h6,p,div, .h1, .h2, .h3, .h4, .h5, .h6 ,.btn {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+.velmld-full-screen{
+    background-color: rgba(8, 8, 8, 0.9)!important;
+}
+.sidebar,.font-weight-bold ,.navbar.default-layout-navbar{
+    font-family: 'Montserrat', sans-serif !important;
+}
+.sidebar .nav .nav-item.active > .nav-link .menu-title{
+    font-family: 'Montserrat', sans-serif !important;
+}
+.sidebar .nav .nav-item .nav-link{
+    color: black;
+}
+.navbar.default-layout-navbar{
+    /*background: #0172bb;*/
+    /*color: white;*/
+}
+.sidebar .nav .nav-item.active > .nav-link .menu-title {
+    color: #0172bb;
+    font-weight: bold;
+}
+.sidebar .nav .nav-item.active > .nav-link i {
+    color: #0172bb;
+}
+.btn-gradient-primary{
+
+}
+/* .bg-gradient-primary, #theme-settings .settings-close,.btn-gradient-primary {
+    background: -webkit-gradient(linear, left top, right top, from(#0193f0), to(#0172bb));
+    background: linear-gradient(to right, #0193f0, #0172bb);
+}
+.btn-primary, .wizard > .actions a {
+    color: #fff;
+    background-color: #0172bb;
+    border-color: #0172bb;
+} */
+.sidebar .nav.sub-menu .nav-item .nav-link.active {
+    color: #0172bb;
+    background: transparent;
+}
+.table thead th, .jsgrid .jsgrid-table thead th {
+    border-top: 0;
+    border-bottom-width: 1px;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: bold;
+}
+
+
+.header-wrapper{
+    background: #f2edf3;
+    padding: 2.75rem 2.25rem;
+    width: 100%;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+
+}
+.content-wrapper {
+    /*background: #f2edf3;*/
+    /*padding: 10px 30px!important;*/
+
+    /*width: 100%;*/
+    /*-webkit-box-flex: 1;*/
+    /*-ms-flex-positive: 1;*/
+    /*flex-grow: 1;*/
+}
