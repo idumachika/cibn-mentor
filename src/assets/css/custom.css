@@ -1,33 +1,55 @@
-h1, h2, h3, h4, h5, h6,p,div, .h1, .h2, .h3, .h4, .h5, .h6 ,.btn {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+div,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+.btn {
     font-family: 'Montserrat', sans-serif !important;
 }
 
-.velmld-full-screen{
-    background-color: rgba(8, 8, 8, 0.9)!important;
+.velmld-full-screen {
+    background-color: rgba(8, 8, 8, 0.9) !important;
 }
-.sidebar,.font-weight-bold ,.navbar.default-layout-navbar{
+
+.sidebar,
+.font-weight-bold,
+.navbar.default-layout-navbar {
     font-family: 'Montserrat', sans-serif !important;
 }
-.sidebar .nav .nav-item.active > .nav-link .menu-title{
+
+.sidebar .nav .nav-item.active>.nav-link .menu-title {
     font-family: 'Montserrat', sans-serif !important;
 }
-.sidebar .nav .nav-item .nav-link{
+
+.sidebar .nav .nav-item .nav-link {
     color: black;
 }
-.navbar.default-layout-navbar{
+
+.navbar.default-layout-navbar {
     /*background: #0172bb;*/
     /*color: white;*/
 }
-.sidebar .nav .nav-item.active > .nav-link .menu-title {
+
+.sidebar .nav .nav-item.active>.nav-link .menu-title {
     color: #0172bb;
     font-weight: bold;
 }
-.sidebar .nav .nav-item.active > .nav-link i {
+
+.sidebar .nav .nav-item.active>.nav-link i {
     color: #0172bb;
 }
-.btn-gradient-primary{
 
-}
+.btn-gradient-primary {}
+
 /* .bg-gradient-primary, #theme-settings .settings-close,.btn-gradient-primary {
     background: -webkit-gradient(linear, left top, right top, from(#0193f0), to(#0172bb));
     background: linear-gradient(to right, #0193f0, #0172bb);
@@ -41,7 +63,9 @@ h1, h2, h3, h4, h5, h6,p,div, .h1, .h2, .h3, .h4, .h5, .h6 ,.btn {
     color: #0172bb;
     background: transparent;
 }
-.table thead th, .jsgrid .jsgrid-table thead th {
+
+.table thead th,
+.jsgrid .jsgrid-table thead th {
     border-top: 0;
     border-bottom-width: 1px;
     font-family: 'Montserrat', sans-serif !important;
@@ -49,7 +73,7 @@ h1, h2, h3, h4, h5, h6,p,div, .h1, .h2, .h3, .h4, .h5, .h6 ,.btn {
 }
 
 
-.header-wrapper{
+.header-wrapper {
     background: #f2edf3;
     padding: 2.75rem 2.25rem;
     width: 100%;
@@ -57,6 +81,7 @@ h1, h2, h3, h4, h5, h6,p,div, .h1, .h2, .h3, .h4, .h5, .h6 ,.btn {
     -ms-flex-positive: 1;
 
 }
+
 .content-wrapper {
     /*background: #f2edf3;*/
     /*padding: 10px 30px!important;*/
@@ -65,4 +90,66 @@ h1, h2, h3, h4, h5, h6,p,div, .h1, .h2, .h3, .h4, .h5, .h6 ,.btn {
     /*-webkit-box-flex: 1;*/
     /*-ms-flex-positive: 1;*/
     /*flex-grow: 1;*/
+}
+
+.navbar.default-layout-navbar {
+    font-weight: "bold";
+    -webkit-box-shadow: 0px 0px 0px 0px rgba(190, 57, 57, 0.2) !important;
+    -moz-box-shadow: 0px 0px 0px 0px rgba(177, 66, 66, 0.2) !important;
+    box-shadow: 0px 0px 0px 0px rgba(199, 18, 18, 0.2) !important;
+}
+
+.card {
+    font-weight: 400;
+    border: 0;
+    -webkit-box-shadow: 0px 0px 0px 0px rgba(190, 57, 57, 0.2) !important;
+    -moz-box-shadow: 0px 0px 0px 0px rgba(177, 66, 66, 0.2) !important;
+    box-shadow: 0px 0px 0px 0px rgba(199, 18, 18, 0.2) !important;
+}
+
+.badge {
+    color: #fff !important;
+    border-radius: 0.125rem;
+    -webkit-box-shadow: 0px 0px 0px 0px rgba(190, 57, 57, 0.2) !important;
+    -moz-box-shadow: 0px 0px 0px 0px rgba(177, 66, 66, 0.2) !important;
+    box-shadow: 0px 0px 0px 0px rgba(199, 18, 18, 0.2) !important;
+}
+.btn {
+    width: 49% !important;
+    margin-top: 0% !important;
+}
+
+.btn {
+    /* margin: 0.375rem; */
+    color: inherit;
+    /* text-transform: uppercase; */
+    word-wrap: break-word;
+    white-space: normal;
+    cursor: pointer;
+    border: 0;
+    border-radius: 0.125rem;
+    -webkit-box-shadow: 0px 0px 0px 0px rgba(190, 57, 57, 0.2) !important;
+    -moz-box-shadow: 0px 0px 0px 0px rgba(177, 66, 66, 0.2) !important;
+    box-shadow: 0px 0px 0px 0px rgba(199, 18, 18, 0.2) !important;
+    -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out !important;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out !important;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out !important;
+    padding: 0.84rem 2.14rem;
+    font-size: 0.81rem;
+}
+.sidebar .nav .nav-item.active>.nav-link .menu-title{
+    color: #ffffff !important;
+    font-weight: bold
+}
+.sidebar .nav .nav-item.active>.nav-link i{
+    color: #ffffff !important;
+    font-weight: bold
+
+
+}
+.sidebar .nav.sub-menu .nav-item .nav-link.active{
+    color: #ffffff !important;
+    font-weight: bold
+
 }

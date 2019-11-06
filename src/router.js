@@ -1,23 +1,15 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Login from './views/Login/Login.vue';
-// import Store from './store/store';
+import Store from './store/store';
 import Dashboard from './views/Dashboard/Dashboard.vue';
-import AddMusicCategory from './views/AddMusicCategory/AddMusicCategory.vue'
-import AddMusic from './views/AddMusic/AddMusic.vue'
-import AddTvShow from './views/AddTvShow/AddTvShow.vue';
-import AddTvShowCategory from './views/AddTvShowCategory/AddTvShowCategory.vue';
-import ListTvShow from './views/ListTvShow/ListTvShow.vue';
-import ListTvShowCategory from './views/ListTvShowCategory/ListTvShowCategory.vue';
-import ListCategory from './views/ListCategory/ListCategory.vue';
-import ListMusic from './views/ListMusic/ListMusic.vue';
-import AddNihuTv from './views/AddNihuTv/AddNihuTv.vue';
-import NihuTvCategory  from './views/NihuTvCategory/NihuTvCategory.vue';
-import ListNihuTv from './views/ListNihuTv/ListNihuTv.vue';
-import ListRecap from './views/ListRecap/ListRecap.vue';
-import AddRecap from './views/AddRecap/AddRecap.vue';
-import ListView from './views/ListView/ListView.vue';
-import AddView from './views/AddView/AddView.vue';
+import Message from './views/Message/Message.vue';
+import Mentor from './views/Mentor/Mentor.vue';
+import Home from './views/Home/Home.vue';
+import MeetingReport from  './views/MeetingReport/MeetingReport.vue';
+import ChangePassword from './views/ChangePassword/ChangePassword.vue';
+import GiveReport from './views/GiveReport/GiveReport.vue';
+import ViewRequest from './views/ViewRequest/ViewRequest.vue'
 
 
 
@@ -25,130 +17,96 @@ Vue.use(Router);
 
 const router = new Router({
     mode: 'history',
-    // base: process.env.NODE_ENV === 'production' ? '/nihu-music' : '/',
+    base: process.env.NODE_ENV === 'production' ? '/nihu-music' : '/',
 
-    routes: [
-        {
-            path: '/',
-            name: 'login',
+    routes: [{
+            path:'/',
+            name:'login',
             component: Login,
-            // meta: {
-            //     public: true,  // Allow access to even if not logged in
-            //     onlyWhenLoggedOut: true
-            // }
+            meta: {
+                public: true, // Allow access to even if not logged in
+                onlyWhenLoggedOut: true
+            }
         },
         {
-            path: '/dashboard',
-            name: 'dashboard',
+            path:'/home',
+            name:'home',
+            component:Home,
+            meta: {
+                 public: true, // Allow access to even if not logged in
+                 onlyWhenLoggedOut: true
+             }
+
+        },
+        {
+            path:'/dashboard',
+            name:'dashboard',
             component: Dashboard,
         },
         {
-            path: '/logout',
-            name: 'logout',
+            path:'/logout',
+            name:'logout',
         },
         {
-            path: '/add-tv-show',
-            name: 'AddTvShow',
-            component: AddTvShow,
+            path:'/message',
+            name:'Message',
+            component: Message,
         },
         {
-            path: '/add-music-category',
-            name: 'AddMusicCategory',
-            component: AddMusicCategory,
+            path: '/view-request',
+            name: 'ViewRequest',
+            component: ViewRequest,
         },
         {
-            path: '/add/music',
-            name: 'AddMusic',
-            component: AddMusic,
+            path: '/give-report',
+            name: 'GiveReport',
+            component: GiveReport,
         },
         {
-            path: '/list/category',
-            name: 'ListCategory',
-            component: ListCategory,
+            path:'/mentor',
+            name:'Mentor',
+            component: Mentor,
         },
         {
-            path: '/list/music',
-            name: 'ListMusic',
-            component: ListMusic,
+            path: '/meeting-report',
+            name: 'MeetingReport',
+            component: MeetingReport,
         },
         {
-            path: '/tv-show/category',
-            name: 'AddTvShowCategory',
-            component: AddTvShowCategory,
-        },
+            path:'/changePassword',
+            name:'ChangePassword',
+            component:ChangePassword,
+             meta: {
+                 public: true, // Allow access to even if not logged in
+                 onlyWhenLoggedOut: true
+             }
+            
+        }
 
-        {
-            path: '/list/tv-show',
-            name: 'ListTvShow',
-            component: ListTvShow,
-        },
-        {
-            path: '/list/tv-show-category',
-            name: 'ListTvShowCategory',
-            component: ListTvShowCategory,
-        },
-        {
-            path: '/add/Nihu-tv',
-            name: 'AddNihuTv',
-            component: AddNihuTv,
-        },
-        
-        {
-            path: '/nihutv/list',
-            name: 'ListNihuTvcategory',
-            component: NihuTvCategory,
-        },
-        {
-            path: '/list/Nihu-tv',
-            name: 'ListNihuTv',
-            component: ListNihuTv,
-        },
-        {
-            path: '/list/Recap',
-            name: 'listRecap',
-            component: ListRecap,
-        },
-        {
-            path: '/add/Recap',
-            name: 'addRecap',
-            component: AddRecap,
-        },
-        {
-            path: '/list/view',
-            name: 'listView',
-            component: ListView,
-        },
-        {
-            path: '/add/View',
-            name: 'addView',
-            component: AddView,
-        },
-        {
-            path: '/add/NihuTv',
-            name: 'AddNihuTv',
-            component: AddNihuTv,
-        },
+
     ]
 });
 
 
-// router.beforeEach((to, from, next) => {
-//     const isPublic = to.matched.some(record => record.meta.public);
-//     const onlyWhenLoggedOut = to.matched.some(record => record.meta.onlyWhenLoggedOut);
-//     const loggedIn = Store.getters.IS_AUTHENTICATED;
+router.beforeEach((to, from, next) => {
+    const isPublic = to.matched.some(record => record.meta.public);
+    const onlyWhenLoggedOut = to.matched.some(record => record.meta.onlyWhenLoggedOut);
+    const loggedIn = Store.getters.IS_AUTHENTICATED;
 
-//     if (!isPublic && !loggedIn) {
-//         return next({
-//             name: 'login',
-//         });
-//     }
+    if (!isPublic && !loggedIn) {
+        return next({
+            name: 'login',
+        });
+    }
 
-//     // Do not allow user to visit login page or register page if they are logged in
-//     if (loggedIn && onlyWhenLoggedOut) {
-//         return next({name: 'dashboard'});
-//     }
+    // Do not allow user to visit login page or register page if they are logged in
+    if (loggedIn && onlyWhenLoggedOut) {
+        return next({
+            name: 'dashboard'
+        });
+    }
 
-//     next();
-// });
+    next();
+});
 
 export default router;

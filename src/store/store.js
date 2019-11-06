@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import Users from './modules/user/users'
+import Sockets from './modules/socket.io/socket'
 import VuexPersist from 'vuex-persist'
-import Categorys from './modules/category/categorys'
+
 
 Vue.use(Vuex);
 
@@ -11,14 +12,15 @@ const vuexPersist = new VuexPersist({
   storage: localStorage
 });
 
-export default new Vuex.Store({
+const store = new Vuex.Store({
   state: {
-
+    
   },
   getters: {
 
   },
   mutations: {
+     
 
   },
   actions: {
@@ -26,7 +28,20 @@ export default new Vuex.Store({
   },
   modules: {
     User: Users,
-    Category: Categorys
+    Socket: Sockets
+
   },
   plugins: [vuexPersist.plugin]
 });
+
+store.watch(
+  (state) => state.sessions,
+  (val) => {
+    window.console.log('CHANGE: ', val);
+    localStorage.setItem('vue-chat-session', JSON.stringify(val));
+  }, {
+    deep: true
+  }
+);
+export default store;
+

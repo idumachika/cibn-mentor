@@ -1,5 +1,9 @@
-import {userService} from "../../../services/user.service";
-import {ApiService} from '../../../services/api.service';
+import {
+    userService
+} from "../../../services/user.service";
+import {
+    ApiService
+} from '../../../services/api.service';
 
 
 
@@ -9,10 +13,23 @@ const actions = {
         // Fetch the User token
         return context.getters.IS_AUTHENTICATED;
     },
-    LOGIN: async (context, {email, password}) => {
-        return await userService.login({email: email, password: password}).then(async (token) => {
+    LOGIN: async (context, {
+        email,
+        password
+    }) => {
+        return await userService.login({
+            email: email,
+            password: password
+        }).then(async (token) => {
+            window.console.log("**********", token)
             // Store the User Token
+            // context.commit('SET_AUTH_TOKEN', token);
+            // // let authorize = await context.dispatch('AUTHORISE_USER', token);
+            // ApiService.setHeader(token);
+
+            // return Promise.resolve(token);
             context.commit('SET_AUTH_TOKEN', token);
+
             let authorize = await context.dispatch('AUTHORISE_USER', token);
             ApiService.setHeader(token);
 
@@ -25,6 +42,7 @@ const actions = {
     AUTHORISE_USER: async (context, token) => {
         return await userService.authorize(token).then((res) => {
             context.commit('SET_USER_DATA', res);
+            window.console.log('///////////////////', res)
             return true;
         }).catch((err) => {
             window.console.log(err);
@@ -33,4 +51,6 @@ const actions = {
     }
 };
 
-export {actions};
+export {
+    actions
+};

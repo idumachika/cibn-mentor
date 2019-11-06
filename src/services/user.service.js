@@ -1,10 +1,27 @@
-import {ApiService} from "./api.service";
+import {
+    ApiService
+} from "./api.service";
+import router from "../router";
 
 const userService = {
-    login: ({email, password}) => {
+    login: ({
+        email,
+        password
+    }) => {
         return new Promise(function (resolve, reject) {
-            ApiService.post('/admin/login', {email: email, password: password}).then(async (res) => {
-                let token = res.data.data.token;
+            ApiService.post('/auth/login', {
+                email: email,
+                password: password
+            }).then(async (res) => {
+                window.console.log("=======", res.data)
+                if (res.data.category == "mentee") {
+                    router.push('/dashboard')
+
+                }
+                if (res.category == "mentor") {
+                    router.push('/dashboard')
+                }
+                let token = res.data.token;
                 resolve(token);
             }).catch((error) => {
                 reject(error);
@@ -13,15 +30,19 @@ const userService = {
     },
     authorize: async (token) => {
         return await ApiService.customRequest({
-            headers: {'Authorization': token},
+            headers: {
+                'x-auth-token': token
+            },
             method: "GET",
-            url: ApiService.getBaseUrl() + "/admin/authorize"
+            url: ApiService.getBaseUrl() + "/users/me"
         }).then((res) => {
-            return Promise.resolve(res.data.data);
+            return Promise.resolve(res.data);
         }).catch((error) => {
             return Promise.reject(error.response.data);
         });
     }
 };
 
-export {userService};
+export {
+    userService
+};

@@ -10,7 +10,7 @@ const ApiService = {
         return ApiService.baseUrl;
     },
     setHeader(token) {
-        axios.defaults.headers.common["Authorization"] = `${token}`
+        axios.defaults.headers.common["x-auth-token"] = `${token}`
     },
     removeHeader() {
         axios.defaults.headers.common = {}
@@ -48,4 +48,6 @@ const ApiService = {
     }
 };
 
-export {ApiService};
+export {
+    ApiService
+};
